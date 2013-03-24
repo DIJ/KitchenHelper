@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html  xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Store Product</title>
+</head>
+<body>
+	<h1><span th:text="#{productstorage.storage}"></span></h1>
+	<form action="" method="post">
+		<fieldset>
+			<span th:text="#{productstorage.product.name}">:</span><input type="text" name="product_name" />
+			<span th:text="#{productstorage.product.expirationdate}">:</span><input type="date" name="product_expiration_date" />
+			<span th:text="#{productstorage.product.quantity}">:</span><input type="number" name="product_quantity" />
+			<input type="submit" value="Store" th:value="#{productstorage.product.store_product}"/>
+		</fieldset>
+	</form>
+	<input type="submit" th:text="#{productstorage.storage.buttonlistproduct}"  th:href="@{/product/productlist}" />
+</body>
+</html>

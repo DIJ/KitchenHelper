@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Product Management</title>
+</head>
+<body>
+
+<h1><span th:text="#{productmanagement.inventory}"></span></h1>
+
+<table>
+	<thead>
+		<tr>
+			<th><span th:text="#{productmanagement.inventorylist.name}"></span></th>
+			<th><span th:text="#{productmanagement.inventorylist.insertiondate}"></span></th>
+			<th><span th:text="#{productmanagement.inventorylist.expirationdate}"></span></th>
+			<th><span th:text="#{productmanagement.inventorylist.quantity}"></span></th>
+			<td><span th:text="#{productmanagement.inventorylist.expirationstatus}"></span></td>
+		</tr>
+	</thead>
+	<tbody>
+		<tr th:each="product : ${listOfProducts}">
+			<td><span th:text="${product.name}"></span></td>
+			<td><span th:text="${product.insertionDate}"></span></td>
+			<td><span th:text="${product.expirationDate]}"></span></td>
+			<td><span th:text="${product.quantity}"></span></td>
+			<td><span th:text="${product.expirationStatus}"></span></td>
+		</tr>
+	</tbody>
+</table>
+<input type="submit" th:text="#{productmanagement.inventory.buttoninsertproduct}"  th:href="@{/product/productinsertion}" />
+</body>
+</html>
